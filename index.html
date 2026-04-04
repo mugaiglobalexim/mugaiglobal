@@ -125,11 +125,21 @@
             const formData = new FormData();
             formData.append('email', emailValue);
 
+            // Send to PHP
             fetch('send_mail.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(async response => {
+                // FORCE the browser to read the raw text from the server
+                const rawText = await response.text();
+                try {
+                    return JSON.parse(rawText); // Try to read it as JSON
+                } catch (err) {
+                    // IF IT FAILS, POP UP THE RAW SERVER RESPONSE!
+                    throw new Error("RAW SERVER RESPONSE:\n\n" + rawText);
+                }
+            })
             .then(data => {
                 if(data.status === 'success') {
                     btn.innerHTML = "<i class='fas fa-check'></i> Subscribed";
@@ -154,10 +164,10 @@
             })
             .catch(error => {
                 console.error("Fetch error:", error);
-                alert("Your server blocked the request. Check your hosting settings.");
+                // THIS WILL NOW SHOW EXACTLY WHAT YOUR SERVER IS DOING WRONG
+                alert(error.message); 
                 btn.innerHTML = "Notify Me";
             });
-        });
     </script>
 </body>
 </html>
