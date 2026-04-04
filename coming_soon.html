@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mugai Global | Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #00f2fe; --secondary: #4facfe; --bg-color: #050914; --text-main: #ffffff; --text-muted: #a0aabf; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow-x: hidden; position: relative; }
+        .bg-animation { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(-45deg, #050914, #0a1930, #0d2750, #050914); background-size: 400% 400%; animation: gradientBG 15s ease infinite; z-index: -2; }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .mouse-glow { position: fixed; width: 300px; height: 300px; background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); z-index: -1; transition: top 0.1s ease, left 0.1s ease; }
+        .container { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 2rem; max-width: 800px; width: 90%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; letter-spacing: 4px; text-transform: uppercase; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 2rem; display: inline-block; }
+        h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        p.subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 3rem; font-weight: 300; }
+        .countdown { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; }
+        .time-box { display: flex; flex-direction: column; align-items: center; }
+        .time-box span.number { font-size: 3rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; display: flex; justify-content: center; align-items: center; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .time-box span.label { margin-top: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--secondary); }
+        form { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; position: relative; }
+        input[type="email"] { padding: 15px 25px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(0, 0, 0, 0.2); color: white; font-family: 'Outfit', sans-serif; font-size: 1rem; width: 300px; outline: none; transition: all 0.3s ease; }
+        input[type="email"]:focus { border-color: var(--secondary); background: rgba(0, 0, 0, 0.4); }
+        button { padding: 15px 35px; border-radius: 50px; border: none; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #000; font-weight: 600; font-family: 'Outfit', sans-serif; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3); }
+        .success-msg { display: none; color: #00f2fe; margin-top: -10px; margin-bottom: 20px; font-size: 0.9rem; }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; }
+        .social-links a { color: var(--text-muted); font-size: 1.5rem; transition: color 0.3s ease, transform 0.3s ease; }
+        .social-links a:hover { color: var(--primary); transform: translateY(-3px); }
+        @media (max-width: 768px) { .container { padding: 2rem; } h1 { font-size: 2.2rem; } .countdown { gap: 1rem; } .time-box span.number { width: 60px; height: 60px; font-size: 2rem; } form { flex-direction: column; align-items: center; } input[type="email"] { width: 100%; } button { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animation"></div>
+    <div class="mouse-glow" id="glow"></div>
+
+    <div class="container">
+        <div class="logo">Mugai Global</div>
+        <h1>Shaping the Future <br>Without Boundaries.</h1>
+        <p class="subtitle">We are currently building our new digital experience. <br>Enter your email to be the first to know when we launch.</p>
+
+        <div class="countdown" id="countdown">
+            <div class="time-box"><span class="number" id="days">00</span><span class="label">Days</span></div>
+            <div class="time-box"><span class="number" id="hours">00</span><span class="label">Hours</span></div>
+            <div class="time-box"><span class="number" id="minutes">00</span><span class="label">Mins</span></div>
+            <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Secs</span></div>
+        </div>
+
+        <form id="notifyForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email address" required>
+            <button type="submit" id="submitBtn">Notify Me</button>
+        </form>
+        <div class="success-msg" id="successMsg"></div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="footer" style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-muted);">
+             &copy; 2026 Mugai Global. All rights reserved. Designed @<a href="https://thedteam.in" target="_blank" style="color: var(--primary); text-decoration: none;">thedteam.in</a>
+        </div>
+    </div>
+
+    <script>
+        // 1. Mouse Glow Effect
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // ==========================================
+        // 2. FIXED COUNTDOWN TIMER
+        // Change the Date and Time below to your exact launch date!
+        // Format: "Month DD, YYYY HH:MM:SS"
+        // ==========================================
+        const launchDate = new Date("May 5, 2026 23:59:59").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = "<h2>We have launched!</h2>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }, 1000);
+
+        // ==========================================
+        // 3. BULLETPROOF PHP FORM SUBMISSION
+        // ==========================================
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('successMsg');
+            const emailValue = document.getElementById('emailInput').value;
+
+            // Stop local users from trying to run PHP
+            if (window.location.protocol === 'file:') {
+                alert("WARNING: PHP does not work locally. You must upload these files to your live web hosting for the emails to send.");
+                return;
+            }
+
+            btn.innerHTML = "Sending...";
+            
+            const formData = new FormData();
+            formData.append('email', emailValue);
+
+            fetch('send_mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    btn.innerHTML = "<i class='fas fa-check'></i> Subscribed";
+                    btn.style.background = "#28a745";
+                    btn.style.color = "#fff";
+                    
+                    msg.style.display = "block";
+                    msg.style.color = "#00f2fe";
+                    msg.innerText = data.message;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = "Notify Me";
+                        btn.style.background = "linear-gradient(135deg, var(--primary), var(--secondary))";
+                        btn.style.color = "#000";
+                        e.target.reset();
+                        msg.style.display = "none";
+                    }, 5000);
+                } else {
+                    alert("Error: " + data.message);
+                    btn.innerHTML = "Notify Me";
+                }
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+                alert("Your server blocked the request. Check your hosting settings.");
+                btn.innerHTML = "Notify Me";
+            });
+        });
+    </script>
+</body>
+</html>
