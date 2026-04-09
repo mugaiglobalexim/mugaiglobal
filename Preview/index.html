@@ -17,6 +17,15 @@
         .hero-gradient {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover;
         }
+                body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-sub {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%);
+        }
 /* Firefox Scrollbar */
 html {
     scrollbar-width: thin;
@@ -100,6 +109,265 @@ html {
             </div>
         </div>
     </header>
+    <br>
+
+<!-- About Us Section -->
+        <header class="hero-sub py-20 text-center relative overflow-hidden">
+        <div class="relative z-10 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">About Us</h1>
+            <p class="text-lg text-blue-200 font-light">Your global partner in electronic supply and design.</p>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p>
+                Mugai Global is a reliable supplier and distributor of Electronic Components, Connectors, Electro Mechanical products, Wires & Cables along with diverse range of Motors, Pumps, Gearboxes, Machined components and both Semi-assembled and Fully Assembled PCBAs.
+            </p>
+            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-l-4 border-l-blue-500">
+                <p class="text-slate-700 font-medium">
+                    In addition, We specialise in designing and developing Electronic products from concept stage to Production which includes Concept formulation, Specification determination, Design, Prototype construction, Testing and Product manufacturing.
+                </p>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl opacity-20 blur-xl"></div>
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Engineering Team" class="relative rounded-3xl shadow-2xl w-full object-cover h-[400px]">
+        </div>
+    </section>
+
+<!-- Products Section -->
+    <header class="hero-sub py-20 text-center relative">
+        <div class="relative z-10 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Product Categories</h1>
+            <p class="text-lg text-blue-200 font-light">Select a category to view our complete inventory capabilities.</p>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Electronic Components" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Electronic Components</h3>
+                    <p class="text-slate-500 mb-6 flex-grow">A comprehensive supply of active and passive electronic components for complex board assemblies.</p>
+                    <a href="product-electronic.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
+                        View Details 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80" alt="Connectivity" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Connectivity & Switches</h3>
+                    <p class="text-slate-500 mb-6 flex-grow">Industrial-grade connectors, switches, and precision electro-mechanical products.</p>
+                    <a href="product-connectivity.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
+                        View Details 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Motors" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Motors & Drives</h3>
+                    <p class="text-slate-500 mb-6 flex-grow">High-efficiency motors and air motors for automated systems and machinery.</p>
+                    <a href="product-motors.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
+                        View Details 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Mechanical" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-8 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Mechanical Assemblies</h3>
+                    <p class="text-slate-500 mb-6 flex-grow">Reliable pumps, gearboxes, and robust machined mechanical hardware.</p>
+                    <a href="product-mechanical.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
+                        View Details 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Services Section -->
+ <header class="hero-sub py-20 text-center relative">
+        <div class="relative z-10 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Design Capabilities</h1>
+            <p class="text-lg text-blue-200 font-light">From concept stage to product manufacturing.</p>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="space-y-16">
+            
+            <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col md:flex-row">
+                <div class="md:w-2/5">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=800&q=80" alt="PCB Design" class="w-full h-full object-cover min-h-[300px]">
+                </div>
+                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Mechanical & PCB</h2>
+                    <p class="text-slate-500 mb-8">Core hardware structural and layout engineering.</p>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Mechanical</h4>
+                            <ul class="space-y-2 text-slate-700 font-medium">
+                                <li>• Industrial Design</li>
+                                <li>• Enclosures and Thermal</li>
+                                <li>• 3D CAD + Drawings</li>
+                                <li>• Prototype Iterations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">PCB Design</h4>
+                            <ul class="space-y-2 text-slate-700 font-medium">
+                                <li>• Up to 10-layer</li>
+                                <li>• High-speed HDI</li>
+                                <li>• RF layouts</li>
+                                <li>• SI/PI-aware routing</li>
+                            </ul>
+                        </div>
+                        <a href="service-design.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition shadow-lg inline-block">
+                        View Details 
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col md:flex-row-reverse">
+                <div class="md:w-2/5">
+                    <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80" alt="Hardware Systems" class="w-full h-full object-cover min-h-[300px]">
+                </div>
+                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Systems & Logic</h2>
+                    <p class="text-slate-500 mb-8">Embedded programming and microcontroller architecture.</p>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Hardware</h4>
+                            <ul class="space-y-2 text-slate-700 font-medium">
+                                <li>• 8/16/32-bit MCUs</li>
+                                <li>• MPUs & peripherals</li>
+                                <li>• FPGA-based systems</li>
+                                <li>• Bring-up & debug</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Firmware</h4>
+                            <ul class="space-y-2 text-slate-700 font-medium">
+                                <li>• RTOS</li>
+                                <li>• Bare-metal</li>
+                                <li>• Embedded Linux</li>
+                                <li>• Drivers & protocols</li>
+                            </ul>
+                        </div>
+                        <a href="service-design.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition shadow-lg inline-block">
+                        View Details
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row relative">
+                <div class="md:w-2/5 relative">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Manufacturing Support" class="w-full h-full object-cover min-h-[300px]">
+                    <div class="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
+                </div>
+                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative z-10">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+                    <h2 class="text-2xl font-extrabold text-white mb-2">Manufacturing Support</h2>
+                    <p class="text-slate-400 mb-8">Testing, scaling, and compliance coordination.</p>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-4 uppercase tracking-wide text-sm">Production</h4>
+                            <ul class="space-y-2 text-slate-300 font-medium">
+                                <li>• Supplier coordination</li>
+                                <li>• EVT / DVT / PVT support</li>
+                                <li>• Pilot builds & yields</li>
+                                <li>• Production issue triage</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-400 mb-4 uppercase tracking-wide text-sm">Certifications</h4>
+                            <ul class="space-y-2 text-slate-300 font-medium">
+                                <li>• EMC/EMI readiness</li>
+                                <li>• Safety & compliance docs</li>
+                                <li>• Pre-compliance testing</li>
+                                <li>• Lab coordination support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<div class="flex-grow max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-16 w-full items-center">
+        
+        <div>
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-4">GET IN TOUCH</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-slate-900 tracking-tight">Let's start a conversation.</h1>
+            
+            <div class="space-y-6 text-lg text-slate-600 bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+                <div>
+                    <p class="font-extrabold text-slate-900 text-xl mb-1">Mugai Global Exim LLP</p>
+                    <p>Shivapura,</p>
+                    <p>Bengaluru – 560063 </p>
+                    <p>India</p>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                    <p class="font-semibold text-sm text-slate-400 uppercase tracking-wider mb-1">Direct Line</p>
+                    <a href="mailto:info@mugaiglobal.com" class="text-blue-600 font-bold hover:text-blue-500 transition">info@mugaiglobal.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.07)] border border-slate-100 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+            <!-- Replace 'YOUR_FORM_ENDPOINT_HERE' with your Formspree/Web3Forms URL -->
+            <form action="YOUR_FORM_ENDPOINT_HERE" method="POST" class="space-y-5 relative z-10">
+                
+                <!-- Honeypot field for anti-spam (Depends on the service you use, Formspree uses _gotcha) -->
+                <div class="hp-container" aria-hidden="true">
+                    <input type="text" id="bot_check" name="_gotcha" tabindex="-1">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">Full Name</label>
+                    <input type="text" name="name" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">Email Address</label>
+                    <input type="email" name="email" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">Message</label>
+                    <textarea name="message" rows="4" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors duration-300 shadow-lg mt-2">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script>
         const btn = document.getElementById('mobile-menu-btn');
@@ -265,7 +533,7 @@ html {
 
             <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <p>&copy; 2026 Mugai Global Exim LLP. All rights reserved.</p>
-                <p class="mt-3 md:mt-0 tracking-wide">Designed by <span class="text-slate-300 font-bold"><a href="https://maps.app.goo.gl/AMoknGcA5hPQCFVL9">The D Team</a></span></p>
+                <p class="mt-3 md:mt-0 tracking-wide">Designed by <span class="text-slate-300 font-bold"><a href="https://maps.app.goo.gl/AMoknGcA5hPQCFVL9">The 'D Team</a></span></p>
             </div>
         </div>
     </footer>
