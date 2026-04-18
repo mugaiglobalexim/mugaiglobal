@@ -1,82 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mugai Global | Modern Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.thedteam.in/assets/img/favicon.png" type="image/x-icon">
     <style>
-        
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Glass Nav adapted for both themes */
         .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        html.dark .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
         .hero-gradient {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover;
         }
-                body { font-family: 'Inter', sans-serif; }
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        
+        /* Firefox Scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #f8fafc; 
         }
-        .hero-sub {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%);
+        html.dark {
+            scrollbar-color: #3b82f6 #0f172a;
         }
-/* Firefox Scrollbar */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 #0f172a; /* Blue thumb, dark slate track */
-}
 
-/* Chrome, Edge, and Safari Scrollbars */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0f172a; /* Matches your slate-900 nav/footer */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #3b82f6; /* Matches the text-blue-500 from your logo */
-    border-radius: 10px;
-    border: 3px solid #0f172a; /* Adds a nice border gap around the blue thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #2563eb; /* Slightly darker blue when hovering */
-}
+        /* Chrome, Edge, Safari Scrollbars */
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        html.dark ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+            border-radius: 10px;
+            border: 3px solid #f8fafc;
+        }
+        html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
+        ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
+        
+        /* Custom section offsets for fixed header */
+        section { scroll-margin-top: 5rem; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
+
 <div id="page-loader" class="fixed inset-0 bg-slate-900 z-[9999] flex items-center justify-center transition-opacity duration-500 opacity-100">
-    <img src="MGE Logo-White.png" alt="Loading..." class="w-40 h-40">
-        <div class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter animate-pulse">
-            MUGAI<span class="text-blue-500">GLOBAL</span>
+        <div class="flex items-center gap-4 md:gap-1 animate-pulse">
+            <img src="MGE Logo-Blue.png" alt="Mugai Global Logo" class="w-10 h-15 md:w-20 md:h-25">
+            <div class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter">
+                MUGAI<span class="text-blue-500">GLOBAL</span>
+            </div>
         </div>
     </div>
-    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-700/50 transition-all duration-300">
+
+    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200 dark:border-slate-700/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="MGE Logo-White.png" alt="Loading..." class="w-20 h-20">
-                    <a href="index.html" class="text-2xl font-extrabold text-white tracking-tighter">MUGAI<span class="text-blue-500">GLOBAL</span></a>
-                </div>
+            <div class="flex-shrink-0 flex items-center">
+            <a href="#home" class="flex items-center gap-2 group">
+            <img src="MGE Logo-Blue.png" alt="Mugai Global" class="w-15 h-14 transform transition group-hover:scale-105 duration-300 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]">
+            <span class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tighter">MUGAI<span class="text-blue-500">GLOBAL</span></span>
+            </a>
+        </div>
                 
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-blue-400 font-semibold transition hover:text-blue-300">Home</a>
-                    <a href="about.html" class="text-slate-300 font-medium transition hover:text-white">About Us</a>
-                    <a href="products.html" class="text-slate-300 font-medium transition hover:text-white">Products</a>
-                    <a href="services.html" class="text-slate-300 font-medium transition hover:text-white">Services</a>
-                    <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
+                    <a href="#home" class="desktop-nav-link text-blue-600 dark:text-blue-400 font-semibold transition hover:text-blue-500 dark:hover:text-blue-300">Home</a>
+                    <a href="#about" class="desktop-nav-link text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
+                    <a href="#products" class="desktop-nav-link text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
+                    <a href="#services" class="desktop-nav-link text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
+                
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
+                                        <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
                 </div>
 
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2 transition">
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="text-slate-500 dark:text-slate-400 p-2">
+                        <svg id="theme-toggle-dark-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white focus:outline-none transition">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -85,293 +109,412 @@ html {
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
-                <a href="index.html" class="block px-4 py-3 text-blue-400 font-semibold rounded-xl bg-slate-800/50">Home</a>
-                <a href="about.html" class="block px-4 py-3 text-slate-300 font-medium rounded-xl hover:bg-slate-800 hover:text-white transition">About Us</a>
-                <a href="products.html" class="block px-4 py-3 text-slate-300 font-medium rounded-xl hover:bg-slate-800 hover:text-white transition">Products</a>
-                <a href="services.html" class="block px-4 py-3 text-slate-300 font-medium rounded-xl hover:bg-slate-800 hover:text-white transition">Services</a>
-                <a href="contact.html" class="block px-4 py-3 text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition text-center mt-4 shadow-lg shadow-blue-900/50">Contact</a>
+                <a href="#home" class="block px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold rounded-xl bg-slate-50 dark:bg-slate-800/50 mobile-link">Home</a>
+                <a href="#about" class="block px-4 py-3 text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">About Us</a>
+                <a href="#products" class="block px-4 py-3 text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Products</a>
+                <a href="#services" class="block px-4 py-3 text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Services</a>
+                <a href="#contact" class="block px-4 py-3 text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition text-center mt-4 shadow-lg shadow-blue-900/50 mobile-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient min-h-screen relative flex items-center justify-center text-center pt-20">
+    <header id="home" class="hero-gradient min-h-screen relative flex items-center justify-center text-center pt-20">
         <div class="relative z-10 px-6 max-w-5xl mx-auto">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wider border border-blue-500/30 mb-6 backdrop-blur-sm">NEXT-GEN ELECTRONICS</span>
-<h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-    Engineering the <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300"></span><span class="animate-pulse text-blue-400 font-light">|</span>
-</h1>
+            <span class="inline-block py-1 px-4 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wider border border-blue-500/30 mb-6 backdrop-blur-sm">NEXT-GEN ELECTRONICS</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+                Engineering the <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300"></span><span class="animate-pulse text-blue-400 font-light">|</span>
+            </h1>
             <p class="text-lg md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-3xl mx-auto font-light">
-                Reliable supply and advanced design of Electronic Components, Electro Mechanical products, and fully assembled PCBAs.
+                Reliable supplier of Electronic & Electro-mechanical products, Motors and Gearboxes & a design house for your various electronic Products & applications
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="products.html" class="bg-white text-slate-900 font-bold py-4 px-8 rounded-full transition-all hover:bg-slate-100 hover:scale-105 shadow-xl">Explore Products</a>
-                <a href="contact.html" class="bg-transparent border border-slate-500 text-white hover:bg-white/10 hover:border-white font-bold py-4 px-8 rounded-full transition-all backdrop-blur-sm">Get in Touch</a>
+                <a href="#products" class="bg-white text-slate-900 font-bold py-4 px-8 rounded-full transition-all hover:bg-slate-100 hover:scale-105 shadow-xl">Explore Products</a>
+                <a href="#contact" class="bg-transparent border border-slate-500 text-white hover:bg-white/10 hover:border-white font-bold py-4 px-8 rounded-full transition-all backdrop-blur-sm">Get in Touch</a>
             </div>
         </div>
-    </header>
-    <br>
-
-<!-- About Us Section -->
-        <header class="hero-sub py-20 text-center relative overflow-hidden">
-        <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">About Us</h1>
-            <p class="text-lg text-blue-200 font-light">Your global partner in electronic supply and design.</p>
-        </div>
+        <div class="hidden dark:block absolute bottom-0 w-full h-24 bg-gradient-to-t dark:from-slate-900 to-transparent"></div>
     </header>
 
-    <section class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-            <p>
-                Mugai Global is a reliable supplier and distributor of Electronic Components, Connectors, Electro Mechanical products, Wires & Cables along with diverse range of Motors, Pumps, Gearboxes, Machined components and both Semi-assembled and Fully Assembled PCBAs.
-            </p>
-            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-l-4 border-l-blue-500">
-                <p class="text-slate-700 font-medium">
-                    In addition, We specialise in designing and developing Electronic products from concept stage to Production which includes Concept formulation, Specification determination, Design, Prototype construction, Testing and Product manufacturing.
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative z-10">
+                <span class="text-blue-600 dark:text-blue-400 font-bold tracking-wider uppercase text-sm mb-4 block">Who We Are</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Your global partner in electronic supply & design.</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Mugai Global is a reliable supplier and distributor of Electronic Components, Connectors, Electro Mechanical products, Wires & Cables along with diverse range of Motors, Pumps, Gearboxes, Machined components and both Semi-assembled and Fully Assembled PCBAs.
                 </p>
-            </div>
-        </div>
-        <div class="relative">
-            <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl opacity-20 blur-xl"></div>
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Engineering Team" class="relative rounded-3xl shadow-2xl w-full object-cover h-[400px]">
-        </div>
-    </section>
-
-<!-- Products Section -->
-    <header class="hero-sub py-20 text-center relative">
-        <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Product Categories</h1>
-            <p class="text-lg text-blue-200 font-light">Select a category to view our complete inventory capabilities.</p>
-        </div>
-    </header>
-
-    <section class="max-w-7xl mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 gap-10">
-            
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Electronic Components" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Electronic Components</h3>
-                    <p class="text-slate-500 mb-6 flex-grow">A comprehensive supply of active and passive electronic components for complex board assemblies.</p>
-                    <a href="product-electronic.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
-                        View Details 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
+                <div class="p-6 bg-white dark:bg-slate-800/50 backdrop-blur-md border border-slate-100 dark:border-slate-700 rounded-2xl shadow-xl border-l-4 border-l-blue-500 transform transition duration-500 hover:-translate-y-1">
+                    <p class="text-slate-700 dark:text-slate-300 font-medium">
+                        We specialize in designing and developing Electronic products from concept stage to Production which includes Concept formulation, Specification determination, Design, Prototype construction, Testing and Product manufacturing.
+                    </p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80" alt="Connectivity" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Connectivity & Switches</h3>
-                    <p class="text-slate-500 mb-6 flex-grow">Industrial-grade connectors, switches, and precision electro-mechanical products.</p>
-                    <a href="product-connectivity.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
-                        View Details 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Motors" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Motors & Drives</h3>
-                    <p class="text-slate-500 mb-6 flex-grow">High-efficiency motors and air motors for automated systems and machinery.</p>
-                    <a href="product-motors.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
-                        View Details 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Mechanical" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Mechanical Assemblies</h3>
-                    <p class="text-slate-500 mb-6 flex-grow">Reliable pumps, gearboxes, and robust machined mechanical hardware.</p>
-                    <a href="product-mechanical.html" class="inline-flex items-center font-bold text-blue-600 hover:text-blue-800 transition">
-                        View Details 
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-<!-- Services Section -->
- <header class="hero-sub py-20 text-center relative">
-        <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Design Capabilities</h1>
-            <p class="text-lg text-blue-200 font-light">From concept stage to product manufacturing.</p>
-        </div>
-    </header>
-
-    <section class="max-w-7xl mx-auto px-6 py-20">
-        <div class="space-y-16">
-            
-            <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col md:flex-row">
-                <div class="md:w-2/5">
-                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=800&q=80" alt="PCB Design" class="w-full h-full object-cover min-h-[300px]">
-                </div>
-                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Mechanical & PCB</h2>
-                    <p class="text-slate-500 mb-8">Core hardware structural and layout engineering.</p>
-                    <div class="grid sm:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Mechanical</h4>
-                            <ul class="space-y-2 text-slate-700 font-medium">
-                                <li>• Industrial Design</li>
-                                <li>• Enclosures and Thermal</li>
-                                <li>• 3D CAD + Drawings</li>
-                                <li>• Prototype Iterations</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">PCB Design</h4>
-                            <ul class="space-y-2 text-slate-700 font-medium">
-                                <li>• Up to 10-layer</li>
-                                <li>• High-speed HDI</li>
-                                <li>• RF layouts</li>
-                                <li>• SI/PI-aware routing</li>
-                            </ul>
-                        </div>
-                        <a href="service-design.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition shadow-lg inline-block">
-                        View Details 
-                    </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col md:flex-row-reverse">
-                <div class="md:w-2/5">
-                    <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80" alt="Hardware Systems" class="w-full h-full object-cover min-h-[300px]">
-                </div>
-                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
-                    <h2 class="text-2xl font-extrabold text-slate-900 mb-2">Systems & Logic</h2>
-                    <p class="text-slate-500 mb-8">Embedded programming and microcontroller architecture.</p>
-                    <div class="grid sm:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Hardware</h4>
-                            <ul class="space-y-2 text-slate-700 font-medium">
-                                <li>• 8/16/32-bit MCUs</li>
-                                <li>• MPUs & peripherals</li>
-                                <li>• FPGA-based systems</li>
-                                <li>• Bring-up & debug</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-blue-600 mb-4 uppercase tracking-wide text-sm">Firmware</h4>
-                            <ul class="space-y-2 text-slate-700 font-medium">
-                                <li>• RTOS</li>
-                                <li>• Bare-metal</li>
-                                <li>• Embedded Linux</li>
-                                <li>• Drivers & protocols</li>
-                            </ul>
-                        </div>
-                        <a href="service-design.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition shadow-lg inline-block">
-                        View Details
-                    </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row relative">
-                <div class="md:w-2/5 relative">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Manufacturing Support" class="w-full h-full object-cover min-h-[300px]">
-                    <div class="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
-                </div>
-                <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative z-10">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-                    <h2 class="text-2xl font-extrabold text-white mb-2">Manufacturing Support</h2>
-                    <p class="text-slate-400 mb-8">Testing, scaling, and compliance coordination.</p>
-                    <div class="grid sm:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-bold text-blue-400 mb-4 uppercase tracking-wide text-sm">Production</h4>
-                            <ul class="space-y-2 text-slate-300 font-medium">
-                                <li>• Supplier coordination</li>
-                                <li>• EVT / DVT / PVT support</li>
-                                <li>• Pilot builds & yields</li>
-                                <li>• Production issue triage</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-blue-400 mb-4 uppercase tracking-wide text-sm">Certifications</h4>
-                            <ul class="space-y-2 text-slate-300 font-medium">
-                                <li>• EMC/EMI readiness</li>
-                                <li>• Safety & compliance docs</li>
-                                <li>• Pre-compliance testing</li>
-                                <li>• Lab coordination support</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-<div class="flex-grow max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-16 w-full items-center">
-        
-        <div>
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wider mb-4">GET IN TOUCH</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-slate-900 tracking-tight">Let's start a conversation.</h1>
-            
-            <div class="space-y-6 text-lg text-slate-600 bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-                <div>
-                    <p class="font-extrabold text-slate-900 text-xl mb-1">Mugai Global Exim LLP</p>
-                    <p>Shivapura,</p>
-                    <p>Bengaluru – 560063 </p>
-                    <p>India</p>
-                </div>
-                <div class="pt-4 border-t border-slate-100">
-                    <p class="font-semibold text-sm text-slate-400 uppercase tracking-wider mb-1">Direct Line</p>
-                    <a href="mailto:info@mugaiglobal.com" class="text-blue-600 font-bold hover:text-blue-500 transition">info@mugaiglobal.com</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.07)] border border-slate-100 relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-
-            <!-- Replace 'YOUR_FORM_ENDPOINT_HERE' with your Formspree/Web3Forms URL -->
-            <form action="YOUR_FORM_ENDPOINT_HERE" method="POST" class="space-y-5 relative z-10">
+            <div class="relative lg:ml-10 mt-10 lg:mt-0">
+                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-[2rem] opacity-20 blur-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Engineering Team" class="relative rounded-[2rem] shadow-2xl w-full object-cover h-[500px] border border-slate-200 dark:border-slate-700 z-10">
                 
-                <!-- Honeypot field for anti-spam (Depends on the service you use, Formspree uses _gotcha) -->
-                <div class="hp-container" aria-hidden="true">
-                    <input type="text" id="bot_check" name="_gotcha" tabindex="-1">
+                <div class="absolute -bottom-8 -left-8 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 z-20 flex items-center gap-4 animate-[bounce_5s_infinite]">
+                    <div class="bg-blue-100 dark:bg-blue-900/50 p-3 rounded-full text-blue-600 dark:text-blue-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-slate-900 dark:text-white">100%</p>
+                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Trusted Delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-24 bg-slate-100 dark:bg-slate-800/20 border-y border-slate-200 dark:border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-bold tracking-wider uppercase text-sm mb-4 block">Our Inventory</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Product Categories</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">Select a category to view our complete capabilities. Built for scale, designed for reliability.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="product-electronic.html" class="group relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Electronic Components" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white mb-2">Electronic Components</h3>
+                            <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Active and passive components for complex board assemblies.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="product-connectivity.html" class="group relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 lg:translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80" alt="Connectivity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white mb-2">Connectivity & Switches</h3>
+                            <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Industrial-grade connectors and precision switches.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="product-motors.html" class="group relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Motors" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white mb-2">Motors & Drives</h3>
+                            <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">High-efficiency motors for automated systems.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="product-mechanical.html" class="group relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 lg:translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Mechanical" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-2xl font-bold text-white mb-2">Mechanical Assemblies</h3>
+                            <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Pumps, gearboxes, and robust machined hardware.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative overflow-hidden">
+        <div class="absolute top-40 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] opacity-20 dark:opacity-10 pointer-events-none"></div>
+        <div class="absolute bottom-40 right-0 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] opacity-20 dark:opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 relative z-10">
+                <span class="text-blue-600 dark:text-blue-400 font-bold tracking-wider uppercase text-sm mb-4 block">End-to-End Solutions</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">Design Capabilities</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">From concept determination to product manufacturing, we engineer success.</p>
+            </div>
+
+            <div class="space-y-12 relative z-10">
+                
+                <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row transition-all duration-300 hover:-translate-y-1">
+                    <div class="md:w-5/12 p-2">
+                        <div class="w-full h-full rounded-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=800&q=80" alt="PCB Design" class="w-full h-full object-cover min-h-[300px] hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+                    <div class="md:w-7/12 p-8 md:p-14 flex flex-col justify-center">
+                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Mechanical & PCB</h2>
+                        <p class="text-slate-500 dark:text-slate-400 mb-8 text-lg">Core hardware structural and layout engineering built for optimal thermal and high-speed performance.</p>
+                        <div class="grid sm:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-4 uppercase tracking-wide text-sm flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-blue-500"></div> Mechanical</h4>
+                                <ul class="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+                                    <li>Industrial Design</li>
+                                    <li>Enclosures and Thermal</li>
+                                    <li>3D CAD + Drawings</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-600 dark:text-blue-400 mb-4 uppercase tracking-wide text-sm flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-blue-500"></div> PCB Design</h4>
+                                <ul class="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+                                    <li>High-speed HDI</li>
+                                    <li>RF layouts</li>
+                                    <li>SI/PI-aware routing</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="service-design.html" class="text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition inline-flex items-center group">
+                            Explore Capabilities <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-sm font-bold mb-2 text-slate-700">Full Name</label>
-                    <input type="text" name="name" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all">
+                <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-500/20 border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row-reverse transition-all duration-300 hover:-translate-y-1">
+                    <div class="md:w-5/12 p-2">
+                        <div class="w-full h-full rounded-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=800&q=80" alt="Hardware Systems" class="w-full h-full object-cover min-h-[300px] hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+                    <div class="md:w-7/12 p-8 md:p-14 flex flex-col justify-center">
+                        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Systems & Logic</h2>
+                        <p class="text-slate-500 dark:text-slate-400 mb-8 text-lg">Embedded programming and microcontroller architecture tailored to your custom specifications.</p>
+                        <div class="grid sm:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h4 class="font-bold text-indigo-600 dark:text-indigo-400 mb-4 uppercase tracking-wide text-sm flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-indigo-500"></div> Hardware</h4>
+                                <ul class="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+                                    <li>8/16/32-bit MCUs</li>
+                                    <li>FPGA-based systems</li>
+                                    <li>Board Bring-up</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-indigo-600 dark:text-indigo-400 mb-4 uppercase tracking-wide text-sm flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-indigo-500"></div> Firmware</h4>
+                                <ul class="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+                                    <li>RTOS & Bare-metal</li>
+                                    <li>Embedded Linux</li>
+                                    <li>Drivers & protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="service-design.html" class="text-indigo-600 dark:text-indigo-400 font-bold hover:text-indigo-800 dark:hover:text-indigo-300 transition inline-flex items-center group">
+                            Explore Systems <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="flex-grow max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 w-full items-center border-t border-slate-200 dark:border-slate-800">
+        
+        <div class="text-center lg:text-left">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-sm font-bold tracking-wider mb-4 mx-auto lg:mx-0">GET IN TOUCH</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-slate-900 dark:text-white tracking-tight">Let's start a conversation.</h1>
+            
+            <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
+                    <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-full text-blue-600 dark:text-blue-400 flex-shrink-0 md:mt-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-slate-900 dark:text-white text-xl mb-1">Mugai Global Exim LLP</p>
+                        <p>Shivapura, <br class="hidden md:block">Bengaluru – 560063 <br> Karnataka 29, India</p>
+                    </div>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-700 relative z-10 text-center md:text-left">
+                    <p class="font-semibold text-sm text-slate-400 uppercase tracking-wider mb-3">Direct Line</p>
+                    <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center justify-center md:justify-start gap-4">
+                        <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-full text-blue-600 dark:text-blue-400 flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <a href="mailto:sales@mugaiglobal.com" class="text-blue-600 dark:text-blue-400 font-bold hover:text-blue-500 transition text-xl break-all">sales@mugaiglobal.com</a>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-2xl pointer-events-none"></div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-400 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-3xl opacity-20 pointer-events-none"></div>
+
+            <form action="YOUR_FORM_ENDPOINT_HERE" method="POST" class="space-y-6 relative z-10 text-left">
+                <div class="hidden" aria-hidden="true">
+                    <input type="text" name="_gotcha" tabindex="-1">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold mb-2 text-slate-700">Email Address</label>
-                    <input type="email" name="email" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all">
+                    <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Full Name</label>
+                    <input type="text" name="name" required class="w-full p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:bg-white dark:focus:bg-slate-800 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold mb-2 text-slate-700">Message</label>
-                    <textarea name="message" rows="4" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all resize-none"></textarea>
+                    <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Email Address</label>
+                    <input type="email" name="email" required class="w-full p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:bg-white dark:focus:bg-slate-800 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all">
                 </div>
-                <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors duration-300 shadow-lg mt-2">
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Message</label>
+                    <textarea name="message" rows="4" required class="w-full p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:bg-white dark:focus:bg-slate-800 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-500 transition-colors duration-300 shadow-lg shadow-blue-500/30 mt-2">
                     Send Message
                 </button>
             </form>
         </div>
-    </div>
+    </section>
+
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 mb-12 text-center md:text-left">
+                
+                <div class="lg:col-span-2">
+                    <div class="mb-4">
+                        <a href="#home" class="flex items-center justify-center md:justify-start gap-2 w-fit mx-auto md:mx-0 group">
+                            <img src="MGE Logo-Blue.png" alt="Mugai Global" class="w-15 h-14 transform transition group-hover:scale-105 duration-300">
+                            <span class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tighter block">MUGAI<span class="text-blue-500">GLOBAL</span></span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
+                        Reliable supplier and distributor of <br class="hidden md:block">Electronic Components, Connectors, <br class="hidden md:block">Electro Mechanical products, Wires & Cables.
+                    </p>
+                    <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
+                        
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
+                            <svg class="w-5 h-5 text-blue-500 md:mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold text-slate-800 dark:text-slate-300">Mugai Global Exim LLP</p>
+                                <p>Shivapura, <br class="hidden md:block">Bengaluru – 560063 <br>Karnataka 29, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
+                            <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:sales@mugaiglobal.com" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition font-medium">sales@mugaiglobal.com</a>
+                        </div>
+                    </address>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="#products" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Products</a></li>
+                        <li><a href="#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Products Links</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="product-electronic.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Electronic Components</a></li>
+                        <li><a href="product-connectivity.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Connectors & Switches</a></li>
+                        <li><a href="product-motors.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Motors & Gearboxes</a></li>
+                        <li><a href="product-mechanical.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Pumps & others</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Service Links</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="service-design.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Design Services</a></li>
+                        <li><a href="service-manufacturing.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Manufacturing</a></li>
+                    </ul>
+                </div>
+
+                <div class="hidden lg:block">
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Scan to Visit</h4>
+                    <div class="group relative bg-white p-2 rounded-xl shadow-md border border-slate-200 inline-block transform transition hover:scale-105 duration-300 cursor-pointer">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.mugaiglobal.com/" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
+                        <p class="text-[10px] text-center mt-2 text-slate-800 font-extrabold uppercase tracking-wider">Mugai Global</p>
+                        
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-36 px-3 py-2 bg-slate-900 text-white text-xs leading-relaxed text-center font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl z-20">
+                            Scan QR to open site on mobile.
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[6px] border-transparent border-t-slate-900"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 text-center md:text-left space-y-3 md:space-y-0">
+                <p>© 2026 Mugai Global Exim LLP. All rights reserved.</p>
+                <p class="tracking-wide">Designed by <span class="text-slate-800 dark:text-slate-300 font-bold"><a href="http://bit.ly/thedteam" class="hover:text-blue-600 dark:hover:text-blue-400 transition">The 'D Team</a></span></p>
+            </div>
+        </div>
+    </footer>
+    
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] hover:-translate-y-1 transition-all duration-300 z-50 opacity-0 pointer-events-none translate-y-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
 
     <script>
+        // 1. Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+        // Check Local Storage or System Preference
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+            lightIconMobile.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+            darkIconMobile.classList.remove('hidden');
+        }
+
+        const toggleTheme = () => {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            darkIconMobile.classList.toggle('hidden');
+            lightIconMobile.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        };
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // 2. Mobile Menu Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('menu-icon');
@@ -380,30 +523,32 @@ html {
         btn.addEventListener('click', () => {
             isMenuOpen = !isMenuOpen;
             menu.classList.toggle('hidden');
-            
-            // Animate hamburger to X
             if (isMenuOpen) {
                 icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
                 icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             }
         });
-        const loader = document.getElementById('page-loader');
 
-        // 1. Fade the loader out when the page is fully loaded
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                menu.classList.add('hidden');
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+
+        // 3. Page Loader Logic
+        const loader = document.getElementById('page-loader');
         window.addEventListener('load', () => {
             setTimeout(() => {
                 loader.classList.remove('opacity-100');
                 loader.classList.add('opacity-0');
-                
-                // Remove from DOM flow so it doesn't block clicks
-                setTimeout(() => {
-                    loader.classList.add('pointer-events-none', 'hidden');
-                }, 500); // Matches the CSS duration-500
-            }, 150); // Tiny delay ensures smooth visual handoff
+                setTimeout(() => { loader.classList.add('pointer-events-none', 'hidden'); }, 500);
+            }, 150);
         });
 
-        // Handle Safari/Firefox back button cache (bfcache)
         window.addEventListener('pageshow', function (event) {
             if (event.persisted) {
                 loader.classList.remove('opacity-100');
@@ -411,133 +556,95 @@ html {
             }
         });
 
-        // 2. Intercept link clicks to trigger the loader before navigating
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const targetUrl = this.href;
-                
-                // Ignore external tabs, anchor jumps, and mailto links
+                // Ignore hash links so smooth scrolling works without triggering the loader
                 if (this.target === '_blank' || !targetUrl || targetUrl.includes('#') || targetUrl.startsWith('mailto:')) {
-                    return;
+                    return; 
                 }
-
-                // Stop the instant page jump
                 e.preventDefault();
-
-                // Bring the loader back up
                 loader.classList.remove('hidden', 'pointer-events-none', 'opacity-0');
-                
-                // Small timeout to allow the browser to render the block before fading
-                setTimeout(() => {
-                    loader.classList.add('opacity-100');
-                }, 10);
+                setTimeout(() => { loader.classList.add('opacity-100'); }, 10);
+                setTimeout(() => { window.location.href = targetUrl; }, 500); 
+            });
+        });
 
-                // Wait for the fade-in animation to finish before actually changing the page
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 500); 
+        // 4. Typewriter Effect
+        const textArray = ["Future", "Hardware", "Solutions", "Tomorrow"];
+        let textIndex = 0, charIndex = 0;
+        const typeSpeed = 120, eraseSpeed = 60, newTextDelay = 2500;
+        const typeWriterElement = document.getElementById("typewriter");
+
+        function type() {
+            if (charIndex < textArray[textIndex].length) {
+                typeWriterElement.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typeSpeed);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typeWriterElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, eraseSpeed);
+            } else {
+                textIndex++;
+                if (textIndex >= textArray.length) textIndex = 0;
+                setTimeout(type, typeSpeed + 500);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
+
+        // 5. Back to Top Logic
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 6. Active Navigation Link Highlighting (ScrollSpy)
+        const sections = document.querySelectorAll("header[id='home'], section[id]");
+        const navLinks = document.querySelectorAll(".desktop-nav-link, .mobile-link:not([href='#contact'])");
+
+        window.addEventListener("scroll", () => {
+            let currentSection = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Check if we have scrolled past the top of the section (with a 100px buffer for the sticky nav)
+                if (scrollY >= sectionTop - 100) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                // Remove active classes (blue text)
+                link.classList.remove("text-blue-600", "dark:text-blue-400", "font-semibold");
+                // Add inactive classes (slate text)
+                link.classList.add("text-slate-600", "dark:text-slate-300", "font-medium");
+                
+                // If the link's href matches the current section, make it active
+                if (link.getAttribute("href") === `#${currentSection}`) {
+                    link.classList.remove("text-slate-600", "dark:text-slate-300", "font-medium");
+                    link.classList.add("text-blue-600", "dark:text-blue-400", "font-semibold");
+                }
             });
         });
     </script>
-    <script>
-    const textArray = ["Future", "Hardware", "Solutions", "Tomorrow"];
-    let textIndex = 0;
-    let charIndex = 0;
-    const typeSpeed = 120;   // Speed of typing
-    const eraseSpeed = 60;   // Speed of deleting
-    const newTextDelay = 2500; // How long to pause before deleting
-    const typeWriterElement = document.getElementById("typewriter");
-
-    function type() {
-        if (charIndex < textArray[textIndex].length) {
-            typeWriterElement.textContent += textArray[textIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typeSpeed);
-        } else {
-            // Word is fully typed, wait and then erase
-            setTimeout(erase, newTextDelay);
-        }
-    }
-
-    function erase() {
-        if (charIndex > 0) {
-            typeWriterElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, eraseSpeed);
-        } else {
-            // Word is fully erased, move to the next word
-            textIndex++;
-            if (textIndex >= textArray.length) textIndex = 0;
-            setTimeout(type, typeSpeed + 500); // Slight pause before typing next word
-        }
-    }
-
-    // Start the animation when the page loads
-    document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(type, 1000); // 1 second delay before the very first word starts typing
-    });
-</script>
-    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 pt-16 pb-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                
-                <div>
-                    <a href="index.html" class="text-2xl font-extrabold text-white tracking-tighter mb-4 block">MUGAI<span class="text-blue-500">GLOBAL</span></a>
-                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
-                        Reliable supplier and distributor of Electronic Components, Connectors, Electro Mechanical products, Wires & Cables.
-                    </p>
-                    <address class="not-italic text-sm text-slate-400 space-y-1">
-                        <p class="font-bold text-slate-300">Mugai Global Exim LLP</p>
-                        <p>Shivapura,</p>
-                        <p>Bengaluru – 560063</p>
-                        <p>India</p>
-                        <p class="mt-4">
-                            <a href="mailto:info@mugaiglobal.com" class="text-blue-400 hover:text-blue-300 transition font-medium">info@mugaiglobal.com</a>
-                        </p>
-                    </address>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-blue-400 transition">About Us</a></li>
-                        <li><a href="products.html" class="hover:text-blue-400 transition">Products</a></li>
-                        <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-400 transition">Contact Us</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-blue-400 transition">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-blue-400 transition">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-blue-400 transition">Cookie Policy</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Products</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="product-electronic.html" class="hover:text-blue-400 transition">Electronic Components</a></li>
-                        <li><a href="product-connectivity.html" class="hover:text-blue-400 transition">Connectivity & Switches</a></li>
-                        <li><a href="product-motors.html" class="hover:text-blue-400 transition">Motors & Drives</a></li>
-                        <li><a href="product-mechanical.html" class="hover:text-blue-400 transition">Mechanical Assemblies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="service-design.html" class="hover:text-blue-400 transition">Design Services</a></li>
-                        <li><a href="service-manufacturing.html" class="hover:text-blue-400 transition">Manufacturing</a></li>
-                        <li><a href="service-testing.html" class="hover:text-blue-400 transition">Testing & Validation</a></li>
-                        <li><a href="service-support.html" class="hover:text-blue-400 transition">After-Sales Support</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-                <p>&copy; 2026 Mugai Global Exim LLP. All rights reserved.</p>
-                <p class="mt-3 md:mt-0 tracking-wide">Designed by <span class="text-slate-300 font-bold"><a href="https://maps.app.goo.gl/AMoknGcA5hPQCFVL9">The 'D Team</a></span></p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
