@@ -1,51 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Mugai Global</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
         .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        html.dark .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+        }
+        
         .hero-sub { background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%); }
         
-        /* Custom Scrollbar */
-        html { scrollbar-width: thin; scrollbar-color: #3b82f6 #0f172a; }
+        /* Firefox Scrollbar */
+        html { scrollbar-width: thin; scrollbar-color: #3b82f6 #f8fafc; }
+        html.dark { scrollbar-color: #3b82f6 #0f172a; }
+
+        /* Chrome, Edge, Safari Scrollbars */
         ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background-color: #3b82f6; border-radius: 10px; border: 3px solid #0f172a; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        html.dark ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background-color: #3b82f6; border-radius: 10px; border: 3px solid #f8fafc; }
+        html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
+
+        .parallax-sub { 
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased pt-20 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased pt-20 flex flex-col min-h-screen transition-colors duration-300">
 
-    <div id="page-loader" class="fixed inset-0 bg-slate-900 z-[9999] flex items-center justify-center transition-opacity duration-500 opacity-100">
-        <div class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter animate-pulse">
-            MUGAI<span class="text-blue-500">GLOBAL</span>
+    <div id="page-loader" class="fixed inset-0 bg-slate-50 dark:bg-slate-900 z-[9999] flex items-center justify-center transition-opacity duration-500 opacity-100">
+        <div class="flex items-center gap-2 md:gap-2 animate-pulse">
+            <img src="MGE Logo-Blue.png" alt="Mugai Global" class="w-18 h-14 transform transition group-hover:scale-105 duration-300 dark:bg-white dark:p-1 dark:rounded-xl">
+            <div class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tighter">
+                MUGAI<span class="text-blue-500">GLOBAL</span>
+            </div>
         </div>
     </div>
 
-    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-700/50 transition-all duration-300">
+    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200 dark:border-slate-700/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-2xl font-extrabold text-white tracking-tighter">MUGAI<span class="text-blue-500">GLOBAL</span></a>
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <img src="MGE Logo-Blue.png" alt="Mugai Global" class="w-11 h-12 transform transition group-hover:scale-105 duration-300 dark:bg-white dark:p-1 dark:rounded-xl">
+                        <span class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tighter">MUGAI<span class="text-blue-500">GLOBAL</span></span>
+                    </a>
                 </div>
+                
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-slate-300 font-medium transition hover:text-white">Home</a>
-                    <a href="about.html" class="text-slate-300 font-medium transition hover:text-white">About Us</a>
-                    <a href="products.html" class="text-slate-300 font-medium transition hover:text-white">Products</a>
-                    <a href="services.html" class="text-slate-300 font-medium transition hover:text-white">Services</a>
-                    <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg">Contact</a>
+                    <a href="index.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Home</a>
+                    <a href="about.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
+                    <a href="products.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
+                    <a href="services.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+
+                    <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2 transition">
+
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="text-slate-500 dark:text-slate-400 p-2">
+                        <svg id="theme-toggle-dark-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white focus:outline-none transition">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -53,65 +102,230 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full max-h-[85vh] overflow-y-auto">
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full max-h-[85vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
-                <a href="index.html" class="block px-4 py-3 text-slate-300 font-medium rounded-xl hover:bg-slate-800 hover:text-white transition">Home</a>
-                <a href="products.html" class="block px-4 py-3 text-slate-300 font-medium rounded-xl hover:bg-slate-800 hover:text-white transition">Products</a>
-                <a href="contact.html" class="block px-4 py-3 text-white font-bold rounded-xl bg-blue-600 text-center mt-4">Contact</a>
+                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Home</a>
+                <a href="about.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">About Us</a>
+                <a href="products.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Products</a>
+                <a href="services.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Services</a>
+                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50 mobile-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-sub py-16 text-center relative">
+    <header class="parallax-sub py-24 text-center relative overflow-hidden">
         <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Terms of Service</h1>
-            <p class="text-lg text-blue-200 font-light">How we handle and protect your data.</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">Terms of Service</h1>
+            <p class="text-lg md:text-xl text-blue-200 font-medium drop-shadow-md">How we handle and protect your data.</p>
         </div>
     </header>
 
-<main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
-        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 text-slate-600 space-y-8 leading-relaxed">
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-400 space-y-8 leading-relaxed transition-colors duration-300">
             
             <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. Acceptance of Terms</h2>
                 <p>By accessing and using the Mugai Global Exim LLP website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Intellectual Property Rights</h2>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. Intellectual Property Rights</h2>
                 <p>The Site and its original content, features, and functionality are owned by Mugai Global Exim LLP and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Use of Site and Products</h2>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. Use of Site and Products</h2>
                 <p>Information provided on this website is for general informational purposes only regarding our electronic components, mechanical assemblies, and design services. Final specifications, pricing, and manufacturing details are subject to direct formal contracts.</p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Limitation of Liability</h2>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">4. Limitation of Liability</h2>
                 <p>In no event shall Mugai Global Exim LLP, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Site.</p>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Governing Law</h2>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">5. Governing Law</h2>
                 <p>These Terms shall be governed and construed in accordance with the laws of India, specifically within the jurisdiction of Bengaluru, Karnataka, without regard to its conflict of law provisions.</p>
             </section>
 
         </div>
     </main>
 
+    <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 pt-16 pb-8 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12 mb-12 text-center md:text-left">
+                
+                <div class="lg:col-span-2">
+                    <div class="mb-4">
+                        <a href="index.html" class="flex items-center justify-center md:justify-start gap-2 w-fit mx-auto md:mx-0 group">
+                            <img src="MGE Logo-Blue.png" alt="Mugai Global" class="w-11 h-12 transform transition group-hover:scale-105 duration-300 dark:bg-white dark:p-1 dark:rounded-xl">
+                            <span class="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tighter block">MUGAI<span class="text-blue-500">GLOBAL</span></span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
+                        Reliable supplier and distributor of <br class="hidden md:block">Electronic Components, Connectors, <br class="hidden md:block">Electro Mechanical products, Wires & Cables.
+                    </p>
+                    <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
+                            <svg class="w-5 h-5 text-blue-500 md:mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold text-slate-800 dark:text-slate-300">Mugai Global Exim LLP</p>
+                                <p>Shivapura, <br class="hidden md:block">Bengaluru – 560063 <br>Karnataka 29, India</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
+                            <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:sales@mugaiglobal.com" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition font-medium">sales@mugaiglobal.com</a>
+                        </div>
+                    </address>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Products</a></li>
+                        <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Products Links</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="product-electronic.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Electronic Components</a></li>
+                        <li><a href="product-connectivity.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Connectors & Switches</a></li>
+                        <li><a href="product-motors.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Motors & Gearboxes</a></li>
+                        <li><a href="product-mechanical.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Pumps & others</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Service Links</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="service-design.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Design Services</a></li>
+                        <li><a href="service-manufacturing.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Manufacturing</a></li>
+                    </ul>
+                </div>
+
+                <div class="hidden lg:block">
+                    <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Scan to Visit</h4>
+                    <div class="group relative bg-white p-2 rounded-xl shadow-md border border-slate-200 inline-block transform transition hover:scale-105 duration-300 cursor-pointer">
+                        <img src="qrcode_site.png" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
+                        <p class="text-[10px] text-center mt-2 text-slate-800 font-extrabold uppercase tracking-wider">Mugai Global</p>
+                        
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-36 px-3 py-2 bg-slate-900 text-white text-xs leading-relaxed text-center font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl z-20">
+                            Scan QR to open site on mobile.
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[6px] border-transparent border-t-slate-900"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 text-center md:text-left space-y-3 md:space-y-0">
+                <p>© 2026 Mugai Global Exim LLP. All rights reserved.</p>
+                <p class="tracking-wide">Designed by <span class="text-slate-800 dark:text-slate-300 font-bold"><a href="#" class="hover:text-blue-600 dark:hover:text-blue-400 transition">The 'D Team</a></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-blue-600 text-white p-3 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] hover:-translate-y-1 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
 
     <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+            lightIconMobile.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+            darkIconMobile.classList.remove('hidden');
+        }
+
+        const toggleTheme = () => {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            darkIconMobile.classList.toggle('hidden');
+            lightIconMobile.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        };
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        btn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            menu.classList.toggle('hidden');
+            if (isMenuOpen) {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+
+        // Page Loader Logic
         const loader = document.getElementById('page-loader');
         window.addEventListener('load', () => {
             setTimeout(() => {
-                loader.classList.remove('opacity-100'); loader.classList.add('opacity-0');
+                loader.classList.remove('opacity-100');
+                loader.classList.add('opacity-0');
                 setTimeout(() => { loader.classList.add('pointer-events-none', 'hidden'); }, 500);
-            }, 150);
+            }, 3000);
         });
+
         window.addEventListener('pageshow', function (event) {
-            if (event.persisted) { loader.classList.remove('opacity-100'); loader.classList.add('opacity-0', 'pointer-events-none', 'hidden'); }
+            if (event.persisted) {
+                loader.classList.remove('opacity-100');
+                loader.classList.add('opacity-0', 'pointer-events-none', 'hidden');
+            }
         });
+
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const targetUrl = this.href;
@@ -123,77 +337,21 @@
             });
         });
 
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        let isMenuOpen = false;
-        btn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            menu.classList.toggle('hidden');
-            icon.setAttribute('d', isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+        // Back to Top Logic
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
-    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 pt-16 pb-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                
-                <div>
-                    <a href="index.html" class="text-2xl font-extrabold text-white tracking-tighter mb-4 block">MUGAI<span class="text-blue-500">GLOBAL</span></a>
-                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
-                        Reliable supplier and distributor of Electronic Components, Connectors, Electro Mechanical products, Wires & Cables.
-                    </p>
-                    <address class="not-italic text-sm text-slate-400 space-y-1">
-                        <p class="font-bold text-slate-300">Mugai Global Exim LLP</p>
-                        <p>Shivapura,</p>
-                        <p>Bengaluru – 560063</p>
-                        <p>India</p>
-                        <p class="mt-4">
-                            <a href="mailto:info@mugaiglobal.com" class="text-blue-400 hover:text-blue-300 transition font-medium">info@mugaiglobal.com</a>
-                        </p>
-                    </address>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-blue-400 transition">About Us</a></li>
-                        <li><a href="products.html" class="hover:text-blue-400 transition">Products</a></li>
-                        <li><a href="services.html" class="hover:text-blue-400 transition">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-400 transition">Contact Us</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-blue-400 transition">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-blue-400 transition">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-blue-400 transition">Cookie Policy</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Products</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="product-electronic.html" class="hover:text-blue-400 transition">Electronic Components</a></li>
-                        <li><a href="product-connectivity.html" class="hover:text-blue-400 transition">Connectivity & Switches</a></li>
-                        <li><a href="product-motors.html" class="hover:text-blue-400 transition">Motors & Drives</a></li>
-                        <li><a href="product-mechanical.html" class="hover:text-blue-400 transition">Mechanical Assemblies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="service-design.html" class="hover:text-blue-400 transition">Design Services</a></li>
-                        <li><a href="service-manufacturing.html" class="hover:text-blue-400 transition">Manufacturing</a></li>
-                        <li><a href="service-testing.html" class="hover:text-blue-400 transition">Testing & Validation</a></li>
-                        <li><a href="service-support.html" class="hover:text-blue-400 transition">After-Sales Support</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-                <p>&copy; 2026 Mugai Global Exim LLP. All rights reserved.</p>
-                <p class="mt-3 md:mt-0 tracking-wide">Designed by <span class="text-slate-300 font-bold"><a href="https://maps.app.goo.gl/AMoknGcA5hPQCFVL9">The 'D Team</a></span></p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
