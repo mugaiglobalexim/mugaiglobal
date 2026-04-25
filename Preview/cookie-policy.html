@@ -56,6 +56,9 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        img {
+            -webkit-user-drag: none;
+        }        
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased pt-20 flex flex-col min-h-screen transition-colors duration-300">
@@ -354,6 +357,13 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Disable right-click on images
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>

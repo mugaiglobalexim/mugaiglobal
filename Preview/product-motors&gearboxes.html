@@ -46,6 +46,10 @@
         ::-webkit-scrollbar-thumb { background-color: #3b82f6; border-radius: 10px; border: 3px solid #f8fafc; }
         html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
+
+            img {
+            -webkit-user-drag: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased pt-20 flex flex-col min-h-screen transition-colors duration-300">
@@ -137,7 +141,7 @@
         <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
             
             <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
-                <div class="flex items-center gap-6 mb-8">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
                     <div class="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-cyan-200 dark:border-cyan-800 flex-shrink-0">
                         <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -173,7 +177,7 @@
             </div>
 
             <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full order-1 md:order-2">
-                <div class="flex items-center gap-6 mb-8">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
                     <div class="w-16 h-16 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-sky-200 dark:border-sky-800 flex-shrink-0">
                         <svg class="w-8 h-8 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                     </div>
@@ -195,7 +199,7 @@
         <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
             
             <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
-                <div class="flex items-center gap-6 mb-8">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
                     <div class="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-cyan-200 dark:border-cyan-800 flex-shrink-0">
                         <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -423,6 +427,13 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Disable right-click on images
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>

@@ -63,6 +63,10 @@
         
         /* Custom section offsets for fixed header */
         section { scroll-margin-top: 1rem; }
+
+        img {
+            -webkit-user-drag: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
@@ -966,7 +970,12 @@
             });
         });
 
-    
+    // Disable right-click on images
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
