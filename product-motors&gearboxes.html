@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Mugai Global</title>
-    <meta name="description" content="Mugai Global | Modern Engineering">
-    <meta property="og:url" content="https://www.mugaiglobal.com/"/>
-    <meta property="og:site_name" content="Mugai Global" />
-    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.mugaiglobal.com/Preview/icon-256x256.png"/>
-    <link rel="shortcut icon" href="https://www.mugaiglobal.com/Preview/favicon.png" type="image/x-icon">
+    <title>Motors & Gearboxes | Mugai Global</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,6 +17,11 @@
             }
         }
     </script>
+    <meta name="description" content="Mugai Global | Modern Engineering">
+    <meta property="og:url" content="https://www.mugaiglobal.com/"/>
+    <meta property="og:site_name" content="Mugai Global" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.mugaiglobal.com/Preview/icon-256x256.png"/>
+    <link rel="shortcut icon" href="https://www.mugaiglobal.com/Preview/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -35,8 +35,6 @@
             background: rgba(15, 23, 42, 0.85);
         }
         
-        .hero-sub { background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%); }
-        
         /* Firefox Scrollbar */
         html { scrollbar-width: thin; scrollbar-color: #3b82f6 #f8fafc; }
         html.dark { scrollbar-color: #3b82f6 #0f172a; }
@@ -49,15 +47,7 @@
         html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
 
-        .parallax-sub { 
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        img {
+            img {
             -webkit-user-drag: none;
         }
     </style>
@@ -85,10 +75,10 @@
                 
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Home</a>
-                    <a href="index.html#about" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
-                    <a href="index.html#products" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
-                    <a href="index.html#services" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
-                    
+                    <a href="about.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
+                    <a href="products.html" class="text-blue-600 dark:text-blue-400 font-semibold transition hover:text-blue-700 dark:hover:text-blue-300">Products</a>
+                    <a href="services.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
+
                     <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
 
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
@@ -113,63 +103,129 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full max-h-[85vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
-                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Home</a>
-                <a href="index.html#about" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">About Us</a>
-                <a href="index.html#products" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Products</a>
-                <a href="index.html#services" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Services</a>
-                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50 mobile-link">Contact</a>
+                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Home</a>
+                <a href="about.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">About Us</a>
+                <a href="products.html" class="block px-4 py-3 text-center text-blue-600 dark:text-blue-400 font-medium rounded-xl bg-slate-50 dark:bg-slate-800/50 transition">Products</a>
+                <a href="services.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Services</a>
+                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50">Contact</a>
             </div>
         </div>
     </nav>
 
-<header class="parallax-sub py-24 text-center relative overflow-hidden">
-        <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">Privacy Policy</h1>
-            <p class="text-lg md:text-xl text-blue-200 font-medium drop-shadow-md">How we handle and protect your data.</p>
+    <header class="bg-slate-900 dark:bg-slate-950 pt-32 pb-24 px-6 text-center relative overflow-hidden transition-colors duration-300 border-b border-slate-800">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-cyan-600 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[120px] opacity-20 pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tighter drop-shadow-2xl">
+                Motors & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Gearboxes</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl leading-relaxed font-light drop-shadow-md">
+                We supply a diverse range of high-efficiency motors and pneumatic motors to power your mechanical assemblies and industrial automated systems.
+            </p>
+            
+            <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
+                Request a Quote
+            </a>
+
+            <a href="index.html#products" class="group text-blue-400 hover:text-blue-300 text-sm font-bold py-10 px-10 tracking-wide uppercase mb-8 inline-flex items-center transition-colors">
+                <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Products
+            </a>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
-        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-400 space-y-8 leading-relaxed transition-colors duration-300">
+    <section class="max-w-7xl mx-auto px-6 py-20 md:py-32 flex-grow w-full space-y-24 md:space-y-32">
+        
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
             
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. Introduction</h2>
-                <p>Mugai Global Exim LLP ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.</p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. Information We Collect</h2>
-                <p>We may collect personal identification information from you in a variety of ways, including, but not limited to, when you visit our site, fill out a contact form, and in connection with other activities, services, features, or resources we make available. Information collected may include:</p>
-                <ul class="list-disc pl-6 mt-2 space-y-1">
-                    <li>Name and Job Title</li>
-                    <li>Contact Information including email address</li>
-                    <li>Demographic information such as postcode, preferences, and interests</li>
+            <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
+                    <div class="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-cyan-200 dark:border-cyan-800 flex-shrink-0">
+                        <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight whitespace-nowrap">Air Motors</h2>
+                </div>
+                
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
+                    Specialized air motors offering spark-free, high power-to-weight ratio solutions for hazardous or heavily volatile manufacturing settings.
+                </p>
+                
+                <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-bold text-lg w-full max-w-sm mx-auto md:mx-0 text-left bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Vane Air Motors </li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Piston Air Motors </li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Pneumatic Drive Systems</li>
                 </ul>
-            </section>
+            </div>
 
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. How We Use Collected Information</h2>
-                <p>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:</p>
-                <ul class="list-disc pl-6 mt-2 space-y-1">
-                    <li>Internal record keeping.</li>
-                    <li>To improve our products and services.</li>
-                    <li>To respond to your direct inquiries submitted via our contact forms.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">4. Data Security</h2>
-                <p>We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic, and managerial procedures to safeguard and secure the information we collect online.</p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">5. Contacting Us</h2>
-                <p>If there are any questions regarding this privacy policy, you may contact us using the information below:</p>
-                <p class="mt-2 font-medium text-slate-800 dark:text-slate-300">Mugai Global Exim LLP<br>Shivapura, Kattigenahalli, Bengaluru – 560063, India<br><a href="mailto:sales@mugaiglobal.com" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition font-medium">sales@mugaiglobal.com</a></p>
-            </section>
-
+            <div class="flex-1 w-full relative">
+                <div class="absolute inset-0 bg-cyan-600 rounded-[2rem] transform translate-x-4 translate-y-4 opacity-10 dark:opacity-20 hidden md:block"></div>
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] border border-slate-200 dark:border-slate-700 group">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Industrial Motors" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
         </div>
-    </main>
+
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+            
+            <div class="flex-1 w-full relative order-2 md:order-1">
+                <div class="absolute inset-0 bg-sky-600 rounded-[2rem] transform -translate-x-4 translate-y-4 opacity-10 dark:opacity-20 hidden md:block"></div>
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] border border-slate-200 dark:border-slate-700 group">
+                    <img src="https://images.unsplash.com/photo-1537151377170-9c19a791bbea?auto=format&fit=crop&w=800&q=80" alt="Air Motors and Drives" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full order-1 md:order-2">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
+                    <div class="w-16 h-16 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-sky-200 dark:border-sky-800 flex-shrink-0">
+                        <svg class="w-8 h-8 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight whitespace-nowrap">Electric Motors</h2>
+                </div>
+                
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
+                    Our catalog includes a diverse range of motors optimized for torque, speed, and continuous operation in demanding production environments.
+                </p>
+                
+                <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-bold text-lg w-full max-w-sm mx-auto md:mx-0 text-left bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-sky-500 rounded-full mr-4 flex-shrink-0"></span>Stepper & Servo Motors </li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-sky-500 rounded-full mr-4 flex-shrink-0"></span>AC/DC Brushless Motors </li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-sky-500 rounded-full mr-4 flex-shrink-0"></span>Precision Micro-Motors</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+            
+            <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
+                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
+                    <div class="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-cyan-200 dark:border-cyan-800 flex-shrink-0">
+                        <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight whitespace-nowrap">Gear Boxes</h2>
+                </div>
+                
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
+                    Specialized gear boxes designed for efficient power transmission and precise motion control in a variety of industrial applications.
+                </p>
+                
+                <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-bold text-lg w-full max-w-sm mx-auto md:mx-0 text-left bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Spur Gear Boxes</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Bevel Gear Boxes</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-4 flex-shrink-0"></span>Worm Gear Boxes</li>
+                </ul>
+            </div>
+
+            <div class="flex-1 w-full relative">
+                <div class="absolute inset-0 bg-cyan-600 rounded-[2rem] transform translate-x-4 translate-y-4 opacity-10 dark:opacity-20 hidden md:block"></div>
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] border border-slate-200 dark:border-slate-700 group">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Industrial Motors" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 pt-16 pb-8 mt-auto transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
@@ -183,7 +239,7 @@
                         </a>
                     </div>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
-                        Reliable supplier of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
+                        Reliable Supplier Of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical Products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
                     </p>
                     <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
@@ -209,12 +265,12 @@
                     <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
                     <ul class="space-y-3 text-sm font-medium">
                         <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
-                        <li><a href="index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</a></li>
-                        <li><a href="index.html#products" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Products</a></li>
-                        <li><a href="index.html#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Products</a></li>
+                        <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a></li>
                         <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Us</a></li>
                         <li><a href="sitemap.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Site Map</a></li>
-                        <li><a href="privacy-policy.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</a></li>
                         <li><a href="terms-of-service.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms of Service</a></li>
                         <li><a href="cookie-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cookie Policy</a></li>
                     </ul>
@@ -225,7 +281,7 @@
                     <ul class="space-y-3 text-sm font-medium">
                         <li><a href="product-electronic_components.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Electronic Components</a></li>
                         <li><a href="product-connectors&switches.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Connectors & Switches</a></li>
-                        <li><a href="product-motors&gearboxes.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Motors & Gearboxes</a></li>
+                        <li><a href="product-motors&gearboxes.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Motors & Gearboxes</a></li>
                         <li><a href="product-pumps&others.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Pumps & others</a></li>
                     </ul>
                 </div>
@@ -241,7 +297,7 @@
                 <div class="hidden lg:block">
                     <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Scan to Visit</h4>
                     <div class="group relative bg-white p-2 rounded-xl shadow-md border border-slate-200 inline-block transform transition hover:scale-105 duration-300 cursor-pointer">
-                        <img src="qrcode_site.png" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.mugaiglobal.com/" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
                         <p class="text-[10px] text-center mt-2 text-slate-800 font-extrabold uppercase tracking-wider">Mugai Global</p>
                         
                         <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-36 px-3 py-2 bg-slate-900 text-white text-xs leading-relaxed text-center font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl z-20">
@@ -336,7 +392,7 @@
                 loader.classList.remove('opacity-100');
                 loader.classList.add('opacity-0');
                 setTimeout(() => { loader.classList.add('pointer-events-none', 'hidden'); }, 500);
-            }, 3000);
+            }, 150);
         });
 
         window.addEventListener('pageshow', function (event) {

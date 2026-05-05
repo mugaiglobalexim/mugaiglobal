@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found | Mugai Global</title>
+    <title>Manufacturing | Mugai Global</title>
     <meta name="description" content="Mugai Global | Modern Engineering">
     <meta property="og:url" content="https://www.mugaiglobal.com/"/>
     <meta property="og:site_name" content="Mugai Global" />
@@ -34,17 +34,6 @@
         html.dark .glass-nav {
             background: rgba(15, 23, 42, 0.85);
         }
-
-        /* Scroll Reveal Animations */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        .reveal-visible {
-            opacity: 1;
-            transform: translate(0);
-        }
         
         /* Firefox Scrollbar */
         html { scrollbar-width: thin; scrollbar-color: #3b82f6 #f8fafc; }
@@ -59,7 +48,7 @@
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
 
         img {
-        -webkit-user-drag: none;
+            -webkit-user-drag: none;
         }
     </style>
 </head>
@@ -88,10 +77,8 @@
                     <a href="index.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Home</a>
                     <a href="index.html#about" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
                     <a href="index.html#products" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
-                    <a href="index.html#services" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
-
+                    <a href="index.html#services" class="text-blue-600 dark:text-blue-400 font-semibold transition hover:text-blue-700 dark:hover:text-blue-300">Services</a>
                     <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
-
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
@@ -114,34 +101,76 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full max-h-[85vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
-                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Home</a>
-                <a href="index.html#about" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">About Us</a>
-                <a href="index.html#products" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Products</a>
-                <a href="index.html#services" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Services</a>
-                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50 mobile-link">Contact</a>
+                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">About Us</a>
+                <a href="index.html#products" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Products</a>
+                <a href="index.html#services" class="block px-4 py-3 text-center text-blue-600 dark:text-blue-400 font-medium rounded-xl bg-slate-50 dark:bg-slate-800/50 transition">Services</a>
+                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow flex items-center justify-center px-6 py-20 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[120px] opacity-20 pointer-events-none"></div>
-        
-        <div class="text-center relative z-10 reveal-up">
-            <h1 class="text-8xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-400 dark:from-white dark:to-slate-600 mb-2 tracking-tighter">404</h1>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Page Not Found</h2>
-            <p class="text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-lg mx-auto leading-relaxed">
-                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
-                    Return to Homepage
-                </a>
-                <a href="index.html#products" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 font-bold py-4 px-8 rounded-xl transition-all shadow-sm hover:shadow-md transform hover:-translate-y-1">
-                    View Products
-                </a>
+    <div class="bg-slate-900 dark:bg-slate-950 text-white relative overflow-hidden transition-colors duration-300">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[100px] opacity-20 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center relative z-10 text-center md:text-left">
+            <div>
+<a href="index.html#services" class="group text-blue-400 hover:text-blue-300 text-sm font-bold tracking-wide uppercase mb-6 inline-flex items-center transition-colors">
+    <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+    </svg>
+    Back to Services
+</a>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-md">Mechanical & <br> PCB Design</h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
+                    We bridge the gap between structural integrity and electronic intelligence. Our core hardware engineering team designs robust enclosures and complex, high-speed board layouts tailored for manufacturing.
+                </p>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] inline-block transform hover:-translate-y-1">Discuss Your Project</a>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-[300px] md:h-[450px] border border-slate-700">
+                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=800&q=80" alt="PCB Design" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
             </div>
         </div>
-    </main>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 flex-grow w-full">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            
+            <div class="space-y-6 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="w-16 h-16 bg-slate-200 dark:bg-slate-800 rounded-2xl flex items-center justify-center transition-colors duration-300 shadow-inner border border-slate-300 dark:border-slate-700">
+                    <svg class="w-8 h-8 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Mechanical Engineering</h2>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">From initial concept sketches to DFM (Design for Manufacturing) ready CAD files, we ensure your product is physically robust, thermally stable, and aesthetically premium.</p>
+                
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 w-full text-left transition-colors duration-300">
+                    <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-semibold">
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Industrial Design & Concept Formulation</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Custom Enclosures & Thermal Management</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Advanced 3D CAD Modeling & 2D Drawings</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Rapid Prototype Construction & Iteration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-2xl flex items-center justify-center transition-colors duration-300 shadow-inner border border-blue-200 dark:border-blue-800">
+                    <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">PCB Layout & Design</h2>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">We architect high-density, multi-layer printed circuit boards optimized for signal integrity, power distribution, and minimal electromagnetic interference.</p>
+                
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 w-full text-left transition-colors duration-300">
+                    <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-semibold">
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Complex Multi-layer Boards (Up to 10-layer)</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> High-speed HDI (High Density Interconnect)</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> Precision RF (Radio Frequency) Layouts</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-3 text-xl leading-none">•</span> SI/PI-aware (Signal & Power Integrity) Routing</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 pt-16 pb-8 mt-auto transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
@@ -155,7 +184,7 @@
                         </a>
                     </div>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
-                        Reliable supplier of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
+                        Reliable Supplier Of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical Products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
                     </p>
                     <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
@@ -183,7 +212,7 @@
                         <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a></li>
                         <li><a href="index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</a></li>
                         <li><a href="index.html#products" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Products</a></li>
-                        <li><a href="index.html#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="index.html#services" class="text-blue-600 dark:text-blue-400 font-semibold transition">Services</a></li>
                         <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact Us</a></li>
                         <li><a href="sitemap.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Site Map</a></li>
                         <li><a href="privacy-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</a></li>
@@ -205,7 +234,7 @@
                 <div>
                     <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Service Links</h4>
                     <ul class="space-y-3 text-sm font-medium">
-                        <li><a href="service-design.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Design Services</a></li>
+                        <li><a href="service-design.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Design Services</a></li>
                         <li><a href="service-manufacturing.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Manufacturing</a></li>
                     </ul>
                 </div>
@@ -343,26 +372,6 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Scroll Reveal Intersection Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach((el) => {
-            observer.observe(el);
         });
 
         // Disable right-click on images

@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pumps and Others | Mugai Global</title>
+    <title>Cookie Policy | Mugai Global</title>
+    <meta name="description" content="Mugai Global | Modern Engineering">
+    <meta property="og:url" content="https://www.mugaiglobal.com/"/>
+    <meta property="og:site_name" content="Mugai Global" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.mugaiglobal.com/Preview/icon-256x256.png"/>
+    <link rel="shortcut icon" href="https://www.mugaiglobal.com/Preview/favicon.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,11 +22,6 @@
             }
         }
     </script>
-    <meta name="description" content="Mugai Global | Modern Engineering">
-    <meta property="og:url" content="https://www.mugaiglobal.com/"/>
-    <meta property="og:site_name" content="Mugai Global" />
-    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.mugaiglobal.com/Preview/icon-256x256.png"/>
-    <link rel="shortcut icon" href="https://www.mugaiglobal.com/Preview/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -35,6 +35,8 @@
             background: rgba(15, 23, 42, 0.85);
         }
         
+        .hero-sub { background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%); }
+        
         /* Firefox Scrollbar */
         html { scrollbar-width: thin; scrollbar-color: #3b82f6 #f8fafc; }
         html.dark { scrollbar-color: #3b82f6 #0f172a; }
@@ -47,9 +49,16 @@
         html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
 
+        .parallax-sub { 
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         img {
             -webkit-user-drag: none;
-        }
+        }        
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased pt-20 flex flex-col min-h-screen transition-colors duration-300">
@@ -76,9 +85,9 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Home</a>
                     <a href="index.html#about" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
-                    <a href="index.html#products" class="text-blue-600 dark:text-blue-400 font-semibold transition hover:text-blue-700 dark:hover:text-blue-300">Products</a>
+                    <a href="index.html#products" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
                     <a href="index.html#services" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
-                    
+                                        
                     <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
 
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
@@ -103,101 +112,50 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full max-h-[85vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
-                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Home</a>
-                <a href="index.html#about" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">About Us</a>
-                <a href="index.html#products" class="block px-4 py-3 text-center text-blue-600 dark:text-blue-400 font-medium rounded-xl bg-slate-50 dark:bg-slate-800/50 transition">Products</a>
-                <a href="index.html#services" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition">Services</a>
-                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50">Contact</a>
+                <a href="index.html" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Home</a>
+                <a href="index.html#about" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">About Us</a>
+                <a href="index.html#products" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Products</a>
+                <a href="index.html#services" class="block px-4 py-3 text-center text-slate-600 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition mobile-link">Services</a>
+                <a href="contact.html" class="block px-4 py-3 text-center text-white font-bold rounded-xl bg-blue-600 hover:bg-blue-500 transition mt-4 shadow-lg shadow-blue-900/50 mobile-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="bg-slate-900 dark:bg-slate-950 pt-32 pb-24 px-6 text-center relative overflow-hidden transition-colors duration-300 border-b border-slate-800">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-emerald-600 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[120px] opacity-20 pointer-events-none"></div>
-        
-        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tighter drop-shadow-2xl">
-                Pumps &<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-slate-500"> Others</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl leading-relaxed font-light drop-shadow-md">
-                Delivering heavy-duty and HMS (Morizontal Multi-Stage) pumps that ensure seamless mechanical motion and fluid dynamics within your industrial frameworks.
-            </p>
-            
-            <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
-                Request a Quote
-            </a>
-
-            <a href="index.html#products" class="group text-blue-400 hover:text-blue-300 text-sm font-bold py-10 px-10 tracking-wide uppercase mb-8 inline-flex items-center transition-colors">
-                <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Back to Products
-            </a>
+<header class="parallax-sub py-24 text-center relative overflow-hidden">
+        <div class="relative z-10 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">Cookie Policy</h1>
+            <p class="text-lg md:text-xl text-blue-200 font-medium drop-shadow-md">How we handle and protect your data.</p>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto px-6 py-20 md:py-32 flex-grow w-full space-y-24 md:space-y-32">
-        
-        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-400 space-y-8 leading-relaxed transition-colors duration-300">
             
-            <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
-                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
-                    <div class="w-16 h-16 bg-slate-200 dark:bg-slate-800 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-slate-300 dark:border-slate-700 flex-shrink-0">
-                        <svg class="w-8 h-8 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight whitespace-nowrap">Industrial Pumps</h2>
-                </div>
-                
-                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-                    We distribute robust pumps engineered for reliable fluid displacement, pressure regulation, and continuous liquid routing across large-scale facilities.
-                </p>
-                
-                <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-bold text-lg w-full max-w-sm mx-auto md:mx-0 text-left bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
-                    <li class="flex items-center"><span class="w-2 h-2 bg-slate-500 rounded-full mr-4 flex-shrink-0"></span> Centrifugal & Gear Pumps</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-slate-500 rounded-full mr-4 flex-shrink-0"></span> Displacement Systems</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-slate-500 rounded-full mr-4 flex-shrink-0"></span> Fluid Handling Components</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-slate-500 rounded-full mr-4 flex-shrink-0"></span> HMS (Morizontal Multi-Stage) Pump</li>
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. What Are Cookies</h2>
+                <p>As is common practice with almost all professional websites, this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it, and why we sometimes need to store these cookies.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. How We Use Cookies</h2>
+                <p>We use cookies for a variety of reasons detailed below. Unfortunately, in most cases, there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. The Cookies We Set</h2>
+                <ul class="list-disc pl-6 mt-2 space-y-2">
+                    <li><strong>Forms related cookies:</strong> When you submit data through a form such as those found on our contact pages, cookies may be set to remember your user details for future correspondence.</li>
+                    <li><strong>Site preferences cookies:</strong> In order to provide you with a great experience on this site, we provide the functionality to set your preferences for how this site runs when you use it.</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="flex-1 w-full relative">
-                <div class="absolute inset-0 bg-slate-500 rounded-[2rem] transform translate-x-4 translate-y-4 opacity-10 dark:opacity-20 hidden md:block"></div>
-                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] border border-slate-200 dark:border-slate-700 group">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Industrial Pump Systems" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                </div>
-            </div>
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">4. Disabling Cookies</h2>
+                <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit.</p>
+            </section>
+
         </div>
-
-        <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
-            
-            <div class="flex-1 w-full relative order-2 md:order-1">
-                <div class="absolute inset-0 bg-emerald-600 rounded-[2rem] transform -translate-x-4 translate-y-4 opacity-10 dark:opacity-20 hidden md:block"></div>
-                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl h-[400px] md:h-[500px] border border-slate-200 dark:border-slate-700 group">
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Precision Gearboxes" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                </div>
-            </div>
-
-            <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left w-full order-1 md:order-2">
-                <div class="flex flex-col items-center gap-6 mb-8 md:flex-row md:items-center">
-                    <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center transition-colors shadow-inner border border-emerald-200 dark:border-emerald-800 flex-shrink-0">
-                        <svg class="w-8 h-8 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight whitespace-nowrap">Others</h2>
-                </div>
-                
-                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-                    Providing highly calibrated gearboxes designed to safely modify torque and speed profiles within your critical mechanical assemblies.
-                </p>
-                
-                <ul class="space-y-4 text-slate-700 dark:text-slate-300 font-bold text-lg w-full max-w-sm mx-auto md:mx-0 text-left bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700">
-                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-4 flex-shrink-0"></span> Pressure Gauges </li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-4 flex-shrink-0"></span> High Pressure fittings</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-4 flex-shrink-0"></span> Personal Protective Equipment (PPEs)</li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
+    </main>
 
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 pt-16 pb-8 mt-auto transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
@@ -211,7 +169,7 @@
                         </a>
                     </div>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
-                        Reliable supplier of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
+                        Reliable Supplier Of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical Products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
                     </p>
                     <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
@@ -244,7 +202,7 @@
                         <li><a href="sitemap.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Site Map</a></li>
                         <li><a href="privacy-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</a></li>
                         <li><a href="terms-of-service.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cookie Policy</a></li>
+                        <li><a href="cookie-policy.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Cookie Policy</a></li>
                     </ul>
                 </div>
 
@@ -254,7 +212,7 @@
                         <li><a href="product-electronic_components.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Electronic Components</a></li>
                         <li><a href="product-connectors&switches.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Connectors & Switches</a></li>
                         <li><a href="product-motors&gearboxes.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Motors & Gearboxes</a></li>
-                        <li><a href="product-pumps&others.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Pumps & others</a></li>
+                        <li><a href="product-pumps&others.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Pumps & others</a></li>
                     </ul>
                 </div>
 
@@ -269,7 +227,7 @@
                 <div class="hidden lg:block">
                     <h4 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-wider text-sm">Scan to Visit</h4>
                     <div class="group relative bg-white p-2 rounded-xl shadow-md border border-slate-200 inline-block transform transition hover:scale-105 duration-300 cursor-pointer">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.mugaiglobal.com/" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
+                        <img src="qrcode_site.png" alt="Scan to visit Mugai Global" class="w-24 h-24 rounded-md">
                         <p class="text-[10px] text-center mt-2 text-slate-800 font-extrabold uppercase tracking-wider">Mugai Global</p>
                         
                         <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-36 px-3 py-2 bg-slate-900 text-white text-xs leading-relaxed text-center font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl z-20">
@@ -364,7 +322,7 @@
                 loader.classList.remove('opacity-100');
                 loader.classList.add('opacity-0');
                 setTimeout(() => { loader.classList.add('pointer-events-none', 'hidden'); }, 500);
-            }, 150);
+            }, 3000);
         });
 
         window.addEventListener('pageshow', function (event) {

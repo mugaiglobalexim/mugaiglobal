@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Policy | Mugai Global</title>
+    <title>Page Not Found | Mugai Global</title>
     <meta name="description" content="Mugai Global | Modern Engineering">
     <meta property="og:url" content="https://www.mugaiglobal.com/"/>
     <meta property="og:site_name" content="Mugai Global" />
@@ -34,8 +34,17 @@
         html.dark .glass-nav {
             background: rgba(15, 23, 42, 0.85);
         }
-        
-        .hero-sub { background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%); }
+
+        /* Scroll Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translate(0);
+        }
         
         /* Firefox Scrollbar */
         html { scrollbar-width: thin; scrollbar-color: #3b82f6 #f8fafc; }
@@ -49,16 +58,9 @@
         html.dark ::-webkit-scrollbar-thumb { border: 3px solid #0f172a; }
         ::-webkit-scrollbar-thumb:hover { background-color: #2563eb; }
 
-        .parallax-sub { 
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.8) 100%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
         img {
-            -webkit-user-drag: none;
-        }        
+        -webkit-user-drag: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased pt-20 flex flex-col min-h-screen transition-colors duration-300">
@@ -87,7 +89,7 @@
                     <a href="index.html#about" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">About Us</a>
                     <a href="index.html#products" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Products</a>
                     <a href="index.html#services" class="text-slate-600 dark:text-slate-300 font-medium transition hover:text-blue-600 dark:hover:text-white">Services</a>
-                                        
+
                     <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-0.5">Contact</a>
 
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 transition">
@@ -121,39 +123,23 @@
         </div>
     </nav>
 
-<header class="parallax-sub py-24 text-center relative overflow-hidden">
-        <div class="relative z-10 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">Cookie Policy</h1>
-            <p class="text-lg md:text-xl text-blue-200 font-medium drop-shadow-md">How we handle and protect your data.</p>
-        </div>
-    </header>
-
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
-        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-400 space-y-8 leading-relaxed transition-colors duration-300">
-            
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. What Are Cookies</h2>
-                <p>As is common practice with almost all professional websites, this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it, and why we sometimes need to store these cookies.</p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. How We Use Cookies</h2>
-                <p>We use cookies for a variety of reasons detailed below. Unfortunately, in most cases, there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not.</p>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. The Cookies We Set</h2>
-                <ul class="list-disc pl-6 mt-2 space-y-2">
-                    <li><strong>Forms related cookies:</strong> When you submit data through a form such as those found on our contact pages, cookies may be set to remember your user details for future correspondence.</li>
-                    <li><strong>Site preferences cookies:</strong> In order to provide you with a great experience on this site, we provide the functionality to set your preferences for how this site runs when you use it.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">4. Disabling Cookies</h2>
-                <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit.</p>
-            </section>
-
+    <main class="flex-grow flex items-center justify-center px-6 py-20 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-[120px] opacity-20 pointer-events-none"></div>
+        
+        <div class="text-center relative z-10 reveal-up">
+            <h1 class="text-8xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-400 dark:from-white dark:to-slate-600 mb-2 tracking-tighter">404</h1>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Page Not Found</h2>
+            <p class="text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-lg mx-auto leading-relaxed">
+                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back on track.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
+                    Return to Homepage
+                </a>
+                <a href="index.html#products" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 font-bold py-4 px-8 rounded-xl transition-all shadow-sm hover:shadow-md transform hover:-translate-y-1">
+                    View Products
+                </a>
+            </div>
         </div>
     </main>
 
@@ -169,7 +155,7 @@
                         </a>
                     </div>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
-                        Reliable supplier of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
+                        Reliable Supplier Of Electronic Components, <br class="hidden md:block">Connectors, Electro Mechanical Products,<br class="hidden md:block">Motors, Pumps & Gear Boxes and PCBAs.
                     </p>
                     <address class="not-italic text-sm text-slate-600 dark:text-slate-400 space-y-6 md:space-y-4">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
@@ -202,7 +188,7 @@
                         <li><a href="sitemap.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Site Map</a></li>
                         <li><a href="privacy-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</a></li>
                         <li><a href="terms-of-service.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="text-blue-600 dark:text-blue-400 font-semibold transition">Cookie Policy</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cookie Policy</a></li>
                     </ul>
                 </div>
 
@@ -357,6 +343,26 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Reveal Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach((el) => {
+            observer.observe(el);
         });
 
         // Disable right-click on images
